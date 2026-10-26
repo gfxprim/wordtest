@@ -1,0 +1,10 @@
+# title: Family
+# english;czech
+mother;matka, máma
+father;otec, táta
+sister;sestra
+brother;bratr
+grandmother;babička
+grandfather;dědeček, děda
+daughter;dcera
+son;syn

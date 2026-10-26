@@ -1,0 +1,15 @@
+Source: wordtest
+Priority: extra
+Maintainer: Cyril Hrubis <metan@ucw.cz>
+Build-Depends: debhelper (>= 9.0), libgfxprim-dev
+Standards-Version: 4.0.0
+Section: education
+Homepage: https://github.com/gfxprim/wordtest
+
+Package: wordtest
+Section: education
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A vocabulary test for language courses
+ A vocabulary test with a quiz and a written exam mode. Courses are installed
+ separately into /usr/share/wordtest/.

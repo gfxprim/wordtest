@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=wordtest
+GenericName=Vocabulary Test
+Version=1.0
+Comment=Vocabulary test for language courses
+Exec=wordtest
+Terminal=false
+Type=Application
+Categories=Education;Languages;

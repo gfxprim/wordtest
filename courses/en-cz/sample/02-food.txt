@@ -1,0 +1,8 @@
+# english;czech
+bread;chléb, chleba
+apple;jablko
+milk;mléko
+cheese;sýr
+egg;vejce
+potato;brambora
+water;voda

@@ -1,0 +1,102 @@
+{
+ "info": {"version": 1, "license": "GPL-2.0-or-later", "author": "Cyril Hrubis <metan@ucw.cz>"},
+ "layout": {
+  "type": "layout_switch", "align": "fill", "uid": "layout_switch",
+  "widgets": [
+   {"type": "vbox", "align": "fill",
+    "widgets": [
+     {"type": "frame", "title": "Course", "align": "hfill",
+      "widget": {"type": "grid", "cols": 2, "rows": 2, "border": "none", "align": "hfill", "cfill": "0, 1",
+       "widgets": [
+        {"type": "label", "text": "Languages", "halign": "left"},
+        {"type": "label", "text": "Course", "halign": "left"},
+        {"type": "spinbutton", "desc": "pair_desc", "uid": "pair", "align": "hfill"},
+        {"type": "spinbutton", "desc": "course_desc", "uid": "course", "align": "hfill"}
+       ]
+      }
+     },
+     {"type": "frame", "title": "Lesson", "align": "fill",
+      "widget": {"type": "table", "min_rows": 8, "align": "fill",
+                 "uid": "lessons", "col_ops": "lessons_col_ops",
+                 "header": [
+                  {"label": "Lesson", "id": "name", "min_size": 20, "fill": 1},
+                  {"label": "Words", "id": "words", "tattr": "right"}
+                 ]
+                }
+     },
+     {"type": "frame", "title": "Session", "align": "hfill",
+      "widget": {"type": "hbox", "border": "none", "halign": "fill",
+       "widgets": [
+        {"type": "label", "text": "Direction:", "halign": "left", "valign": "center"},
+        {"type": "radiobutton", "desc": "dir_desc", "uid": "dir", "halign": "left"},
+        {"type": "label", "text": "Words:", "halign": "left"},
+        {"type": "spinner", "uid": "max_words", "min": 1, "max": 999, "val": 20, "halign": "left"}
+       ], "padd-fill": "0, 0, 1, 0, 0", "cell-fill": "4 * 0"
+      }
+     },
+     {"type": "hbox", "align": "hfill", "border": "none", "uniform": true,
+      "widgets": [
+       {"type": "button", "label": "Quiz", "align": "hfill", "uid": "quiz_btn", "on_event": "start_quiz"},
+       {"type": "button", "label": "Written exam", "align": "hfill", "uid": "exam_btn", "on_event": "start_exam"}
+      ]
+     }
+    ],
+    "cell-fill": "0, 1, 0, 0"
+   },
+   {"type": "vbox", "align": "fill",
+    "widgets": [
+     {"type": "grid", "uid": "quiz_grid", "cols": 2, "rows": 1, "uniform": true, "align": "fill",
+      "widgets": [
+       {"type": "label", "uid": "quiz_lang0", "tattr": "bold", "text": ""},
+       {"type": "label", "uid": "quiz_lang1", "tattr": "bold", "text": ""}
+      ]
+     },
+     {"type": "label", "uid": "quiz_status", "width": 40, "halign": "fill", "tattr": "center", "text": ""},
+     {"type": "label", "uid": "quiz_progress", "text": ""},
+     {"type": "button", "label": "Back", "btype": "prev", "halign": "fill", "on_event": "back_to_menu"}
+    ],
+    "cell-fill": "1, 0, 0, 0"
+   },
+   {"type": "vbox", "align": "fill",
+    "widgets": [
+     {"type": "label", "uid": "exam_prompt", "tattr": "large|bold", "text": ""},
+     {"type": "vbox", "align": "fill", "border": "none",
+      "widgets": [
+       {"type": "label", "uid": "exam_word", "tattr": "large|bold|center", "width": 30, "halign": "fill", "text": ""},
+       {"type": "hbox", "align": "hfill", "border": "none",
+        "widgets": [
+         {"type": "tbox", "uid": "exam_answer", "len": 30, "halign": "fill", "on_event": "exam_answer_event"},
+         {"type": "button", "label": "Check", "btype": "ok", "on_event": "exam_check"}
+        ],
+        "cell-fill": "1, 0"
+       },
+       {"type": "label", "uid": "exam_feedback", "width": 40, "halign": "fill", "tattr": "center", "text": ""},
+       {"type": "label", "uid": "exam_progress", "text": ""}
+      ],
+      "cell-fill": "0, 0, 0, 0",
+      "padd-fill": "1, 0, 0, 0, 1"
+     },
+     {"type": "button", "label": "Back", "btype": "prev", "halign": "fill", "on_event": "back_to_menu"}
+    ],
+    "cell-fill": "0, 1, 0"
+   },
+   {"type": "vbox", "align": "fill",
+    "widgets": [
+     {"type": "label", "uid": "results_title", "tattr": "large|bold", "text": ""},
+     {"type": "label", "uid": "results_summary", "text": ""},
+     {"type": "frame", "title": "Missed words", "align": "fill",
+      "widget": {"type": "table", "min_rows": 6, "align": "fill",
+                 "uid": "results_missed", "col_ops": "results_col_ops",
+                 "header": [
+                  {"label": "Word", "id": "word", "min_size": 15, "fill": 1},
+                  {"label": "Translation", "id": "translation", "min_size": 15, "fill": 1}
+                 ]
+                }
+     },
+     {"type": "button", "label": "Back to menu", "btype": "prev", "halign": "fill", "on_event": "back_to_menu"}
+    ],
+    "cell-fill": "0, 0, 1, 0"
+   }
+  ]
+ }
+}
